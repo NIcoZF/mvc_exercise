@@ -21,6 +21,9 @@ FactoryBot.define do
       has_discount { true }
     end
 
+    trait :without_discount do
+      has_discount { false }
+    end
     factory :item_with_discount, traits: %i[with_discount]
   end
 end
