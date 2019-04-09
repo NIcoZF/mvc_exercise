@@ -13,9 +13,13 @@
 #
 
 class Item < ApplicationRecord
+  validates :discount_percentage,
+            inclusion: { in: 0..99 },
+            numericality: { only_integer: true }
+
   def price
     if has_discount == true
-      original_price - (original_price * (discount_percentage / 100))
+      (original_price - (original_price * discount_percentage / 100)).round(2)
     else
       original_price
     end
