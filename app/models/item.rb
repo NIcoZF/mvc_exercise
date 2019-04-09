@@ -14,7 +14,7 @@
 
 class Item < ApplicationRecord
   def price
-    if has_discount
+    if has_discount == true
       original_price - (original_price * (discount_percentage / 100))
     else
       original_price
