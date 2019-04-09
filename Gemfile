@@ -39,6 +39,7 @@ group :development do
   gem 'rubocop-rspec', require: false
   gem 'spring', '~> 2.0', '>= 2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "table_print"
 end
 
 group :test do
