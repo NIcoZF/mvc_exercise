@@ -14,18 +14,18 @@
 
 class Item < ApplicationRecord
   def price
-    if has_discount == true
-            price = original_price * (1-discount_percentage/100)
-        else 
-       original_price 
+    if has_discount? == true
+      original_price * (1 - discount_percentage / 100)
+    else
+      original_price
     end
   end
 
   def self.average_price
     price_array = []
-      all.find_each do |item|
+    all.find_each do |item|
       price_array << item.price
-      end
-      (price_array.sum/price_array.count).round(1)
+    end
+    (price_array.sum / price_array.count).round(1)
   end
 end
