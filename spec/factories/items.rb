@@ -14,7 +14,7 @@
 
 FactoryBot.define do
   factory :item do
-    original_price      { Faker::Number.decimal(2) }
+    original_price      { Faker::Number.within(1..99) }
     has_discount        { Faker::Boolean.boolean }
     discount_percentage { Faker::Number.number(2) }
 
