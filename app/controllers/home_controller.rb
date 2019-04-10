@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  def landing_page
+  def index
     @items = Item.all
+    @item = Item.find(params[:id])
   end
 end
