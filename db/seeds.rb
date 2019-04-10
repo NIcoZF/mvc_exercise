@@ -2,7 +2,7 @@
 
 1.upto(10) do |i|
   Item.create!(
-    original_price: Faker::Number.decimal(2)
+    original_price: rand(1..99).decimal(2)
   )
   p "ITEM #{i} : créé"
 end
