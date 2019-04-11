@@ -19,19 +19,20 @@
 			<li class="sidebar-item">
 		    <%= link_to administration_items_path, class: "sidebar-link" do %>
           <span class="align-middle">
-          	Items
+          	Items (Admin access)
           </span>
         <% end %>
 			</li>
 
-			<li class="sidebar-item">
-				<%= link_to('User Login', new_user_session_path, class: "sidebar-link" ) %>  
-		  </li>
-
+			<% if user_signed_in? %>
 				<li class="sidebar-item">
-				<%= link_to('User Logout', destroy_user_session_path, method: :delete, class: "sidebar-link" ) %>  
-		  </li>
-
+					<%= link_to('User Logout', destroy_user_session_path, method: :delete, class: "sidebar-link" ) %>  
+				</li>
+			<%else%>
+				<li class="sidebar-item">
+				<%= link_to('User Login', new_user_session_path, class: "sidebar-link" ) %>  
+		  	</li>
+			<%end%>
 		</ul>
 
 	</div>
