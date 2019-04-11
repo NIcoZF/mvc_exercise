@@ -9,13 +9,6 @@
 
 		<ul class="sidebar-nav">
 
-
-			<li class="sidebar-item">
-          <span class="align-middle">
-							Current User
-          </span>
-      </li>
-
 			<li class="sidebar-item">
 		    <%= link_to administration_items_path, class: "sidebar-link" do %>
           <span class="align-middle">
@@ -23,6 +16,14 @@
           </span>
         <% end %>
 			</li>
+
+			<% if admin_signed_in?%>
+				<li class="sidebar-item">
+				<p><%= link_to('Admin Logout', destroy_admin_session_path, method: :delete, class: "sidebar-link" ) %> </p>
+				</li>
+			<%else%>
+			<%end%>
+
 
 			<% if user_signed_in? %>
 				<li class="sidebar-item">

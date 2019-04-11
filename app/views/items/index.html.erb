@@ -2,6 +2,11 @@
 			<div class="col-12">
 
 				<div class="card">
+                    <h3>Email Utilisateur</h3>
+                        <% if user_signed_in? %>
+		                <p><%= current_user.email %></p>
+                        <%else%>
+                        <%end%> 
 					<div class="table-responsive">
 						<table class="table table-striped table-hover">
 							<thead>

@@ -2,7 +2,7 @@
 
 module Administration
   class ProfilesController < ApplicationController
-    before_action :set_profile
+    # before_action :set_profile
 
     def show; end
 
